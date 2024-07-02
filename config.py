@@ -78,7 +78,7 @@ def user_day_check(id):
     if chk!=None:
        expr = chk[2]
        print(expr)
-       exp = datetime.strptime(expr, '%Y-%m-%d %H:%M:%S')
+       exp = datetime.strptime(expr, '%Y-%m-%d %H:%M:%S.%f')
        today = datetime.today()
        if exp > today:
           days_left=(exp-today).days
