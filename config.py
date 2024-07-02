@@ -76,7 +76,8 @@ def user_day_check(id):
     c.execute(F"SELECT * FROM users WHERE user_id={id} LIMIT 1")
     chk = c.fetchone()
     if chk!=None:
-       exp = chk[2]
+       expr = chk[2]
+       exp = datetime.strptime(expr, '%Y-%m-%d %H:%M:%S')
        today = datetime.today()
        if exp > today:
           days_left=(exp-today).days
