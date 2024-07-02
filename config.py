@@ -77,6 +77,7 @@ def user_day_check(id):
     chk = c.fetchone()
     if chk!=None:
        expr = chk[2]
+       print(expr)
        exp = datetime.strptime(expr, '%Y-%m-%d %H:%M:%S')
        today = datetime.today()
        if exp > today:
